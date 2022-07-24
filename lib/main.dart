@@ -41,7 +41,7 @@ class _HomPageState extends State<HomPage> {
            centerTitle: true,
            backgroundColor: Colors.blue,
          ),
-        drawer: Drawer(
+        endDrawer: Drawer(
           child: Container(
             alignment: Alignment.topLeft,
             color: Colors.blue,
@@ -55,7 +55,7 @@ class _HomPageState extends State<HomPage> {
       drawerEnableOpenDragGesture: false,
       body: Container(
         child: RaisedButton(onPressed: () {
-          globalKey.currentState!.openDrawer();
+          globalKey.currentState!.openEndDrawer();
         },
 
         ),
