@@ -52,6 +52,7 @@ class _HomPageState extends State<HomPage> {
             ),
           ),
         ),
+      drawerEnableOpenDragGesture: false,
       body: Container(
         child: RaisedButton(onPressed: () {
           globalKey.currentState!.openDrawer();
