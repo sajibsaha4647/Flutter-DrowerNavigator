@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 void main() {
@@ -32,6 +33,11 @@ class _HomPageState extends State<HomPage> {
 
   final globalKey = GlobalKey<ScaffoldState>();
 
+  final Uri _url = Uri.parse('https://flutter.dev');
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
@@ -53,15 +59,28 @@ class _HomPageState extends State<HomPage> {
           ),
         ),
       drawerEnableOpenDragGesture: false,
-      body: Container(
-        child: RaisedButton(onPressed: () {
-          globalKey.currentState!.openEndDrawer();
-        },
+      body: Column(
+        children: [
+          Container(
+            child: RaisedButton(onPressed: () {
+              globalKey.currentState!.openEndDrawer();
+            },
 
-        ),
-      ),
+            ),
+          ),
+          RaisedButton(
+              child: Text("click"),
+              onPressed: (){
+                launchUrl(_url);
+              }
+          )
+        ],
+      )
+
     ));
   }
 }
+
+
 
 
